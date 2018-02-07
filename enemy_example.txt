@@ -1,0 +1,6 @@
+3 Goblin 1 | 10 10
+3 Goblin 2 | 10 10
+1 Orc 1 | 18 18
+1 Orc 2 | 18 18
+2 Orc Shaman | 45 45
+0 Tarrasque | 900 900

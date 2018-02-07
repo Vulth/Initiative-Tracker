@@ -1,9 +1,0 @@
-3 Goblin 1 | 10 10
-3 Goblin 2 | 10 10
-3 Goblin 3 | 10 10
-1 Bugbear 1 | 50 50
-1 Bugbear 2 | 50 50
-1 Bugbear 3 | 50 50
-3 Goblin Shaman 1 | 26 26
-3 Goblin Shaman 2 | 26 26
-3 Tarrasque | 900 900

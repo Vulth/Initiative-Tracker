@@ -1,0 +1,5 @@
+Frodo Baggins | 36 36
+Gandalf the Grey | 26 26
+Legolas | 30 30
+Aragorn | 32 32
+Gimli | 28 28
