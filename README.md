@@ -8,14 +8,18 @@ FORMAT
 Party file format:
 
 The program will concatenate all words up to the vertical line into the character name 
+
 Current health 
+
 Maximum health
 
 Enemy file format:
 
 First number is the total modifier to initiative the enemy has
 All words up to the vertical line make up the monster name
+
 Monster's current health
+
 Monster's maximum health
 
 There are examples of both types of files included
