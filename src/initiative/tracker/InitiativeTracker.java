@@ -199,7 +199,10 @@ public class InitiativeTracker {
     {
         for (int i = 0; i < brawl.totalfighters; i++)
         {
-            System.out.println(brawl.fighters[i].initiative + " " + brawl.fighters[i].name + " " + brawl.fighters[i].currenthealth + "/" + brawl.fighters[i].maxhealth);
+            if (brawl.fighters[i].currenthealth > 0)
+            {
+                System.out.println(brawl.fighters[i].initiative + " " + brawl.fighters[i].name + " " + brawl.fighters[i].currenthealth + "/" + brawl.fighters[i].maxhealth);
+            }
         }
         System.out.println();
     }
@@ -264,14 +267,6 @@ public class InitiativeTracker {
         System.out.print("How much damage does " + brawl.fighters[characterFound].name + " take? ");
         int damageTaken = Integer.parseInt(input.nextLine());
         brawl.fighters[characterFound].currenthealth = brawl.fighters[characterFound].currenthealth - damageTaken;
-        if (brawl.fighters[characterFound].currenthealth <= 0)
-        {
-            for (int i = characterFound + 1; i < brawl.totalfighters; i++)
-            {
-                brawl.fighters[i-1] = brawl.fighters[i];
-            }
-            brawl.totalfighters--;  
-        }
         
         return brawl;
     }
@@ -318,6 +313,7 @@ public class InitiativeTracker {
             {
                 System.out.println("There is no fighter with that name. Try again");
                 errorcount++;
+                characterName = "";
             }
             if (errorcount > 2)
             {
@@ -336,16 +332,19 @@ public class InitiativeTracker {
            for (int i = 0; i < brawl.totalpartymembers; i++)
            {
                int partyMemberInfoIndex = findFighter(brawl, brawl.partylist[i]);
-               StringBuilder characterInfo = new StringBuilder();
-               characterInfo.append(brawl.fighters[partyMemberInfoIndex].name);
-               characterInfo.append(" | ");
-               characterInfo.append(brawl.fighters[partyMemberInfoIndex].currenthealth);
-               characterInfo.append(" ");
-               characterInfo.append(brawl.fighters[partyMemberInfoIndex].maxhealth);
-               System.out.println(characterInfo);
-               writer.write(characterInfo.toString());
-               writer.newLine();
-            }  
+               if (partyMemberInfoIndex != -1)
+               {
+                    StringBuilder characterInfo = new StringBuilder();
+                    characterInfo.append(brawl.fighters[partyMemberInfoIndex].name);
+                    characterInfo.append(" | ");
+                    characterInfo.append(brawl.fighters[partyMemberInfoIndex].currenthealth);
+                    characterInfo.append(" ");
+                    characterInfo.append(brawl.fighters[partyMemberInfoIndex].maxhealth);
+                    System.out.println(characterInfo);
+                    writer.write(characterInfo.toString());
+                    writer.newLine();
+               }
+           }  
        } 
        finally    
        {

@@ -1,5 +1,5 @@
 Frodo Baggins | 36 36
-Gandalf the Grey | 26 26
-Legolas | 30 30
-Aragorn | 32 32
-Gimli | 28 28
+Gandalf the Grey | 32 32
+Aragorn | 26 26
+Gimli | -1 30
+Legolas | 26 26
